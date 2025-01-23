@@ -1,0 +1,27 @@
+[
+    {
+      "id": 1,
+      "name": "Samsung Galaxy S21",
+      "price": 799.99,
+      "image": "https://fdn2.gsmarena.com/vv/bigpic/samsung-galaxy-s21.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Google Pixel 7",
+      "price": 599.99,
+      "image": "https://fdn2.gsmarena.com/vv/bigpic/google-pixel-7.jpg"
+    },
+    {
+      "id": 3,
+      "name": "OnePlus 11",
+      "price": 699.99,
+      "image": "https://fdn2.gsmarena.com/vv/bigpic/oneplus-11.jpg"
+    },
+    {
+      "id": 4,
+      "name": "Xiaomi 13 Pro",
+      "price": 649.99,
+      "image": "https://fdn2.gsmarena.com/vv/bigpic/xiaomi-13-pro.jpg"
+    }
+  ]
+  
