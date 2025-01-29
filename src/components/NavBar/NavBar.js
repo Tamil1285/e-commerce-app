@@ -3,10 +3,12 @@ import './Navbar.css';
 import { Link } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-
 import { BsGeoAlt, BsHeart, BsPersonCircle, BsCart3 } from 'react-icons/bs';
+import { useContext } from 'react';
+import { CartContext } from '../../App';
 
 const Navbar = () => {
+   const { cartItems } = useContext(CartContext);
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container">
@@ -56,17 +58,26 @@ const Navbar = () => {
               </a>
             </li>
             <li className="nav-item">
-              <Link className="nav-link d-flex align-items-center" to="/favorites">
+              <Link className="nav-link d-flex align-items-center" to="/Wishlist">
                 <BsHeart className="me-1" /> 
-                <span className="d-none d-lg-inline">Favorites</span>
+                <span className="d-none d-lg-inline">Wishlist</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/cart" className="nav-link d-flex align-items-center">
-               <BsCart3 className="me-1" /> 
-                <span className="d-none d-lg-inline">Cart</span>
-              </Link>
-            </li>
+            <Link to="/cart" className="nav-link d-flex align-items-center position-relative">  
+            <BsCart3 className="me-1"/>
+              {/* Show badge only if cartItems.length > 0 */}
+            {cartItems.length > 0 && (
+              <span 
+                className="badge bg-danger rounded-pill position-absolute" 
+                style={{ top: "0", left: "0", transform: "translate(80%, -8%)", fontSize: "0.60rem" }}
+              >
+                {cartItems.length}
+              </span> 
+            )}
+              <span className="d-none d-lg-inline">Cart</span>
+            </Link>
+              </li>
             <li className="nav-item">
               <a className="nav-link d-flex align-items-center" href="#">
                 <BsPersonCircle className="me-1" /> 
